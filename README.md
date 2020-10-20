@@ -12,10 +12,10 @@ firmware produced *_hex but not *.hex
 
 ### add reading material of Pulse-Induction for metal detector   
 [ATtiny13-PI_metal_detector_Łukasz_Podkalicki.pdf](/Pulse-Induction/ATtiny13-PI_metal_detector_Łukasz_Podkalicki.pdf)   
-[How Metal Detectors Work.pdf](/Pulse-Induction/How Metal Detectors Work.pdf)       
-[Metal detector.pdf](/Pulse-Induction/Metal detector.pdf)             
-[Understanding The PI Detector.pdf](/Pulse-Induction/Understanding The PI Detector.pdf)     
-[Understanding The PI Detector (part 2).pdf](/Pulse-Induction/Understanding The PI Detector (part 2).pdf)    
+[How_Metal_Detectors_Work.pdf](/Pulse-Induction/How_Metal_Detectors_Work.pdf)  
+[Metal_detector.pdf](/Pulse-Induction/Metal_detector.pdf)  
+[Understanding_The_PI_Detector.pdf](/Pulse-Induction/Understanding_The_PI_Detector.pdf)  
+[Understanding_The_PI_Detector_(part_2).pdf](/Pulse-Induction/Understanding_The_PI_Detector_(part_2).pdf)     
 
 ### two versions of avr-gcc used setup the path first if using Windows machine,
 ::set ac=C:\WinAVR-20100110  
