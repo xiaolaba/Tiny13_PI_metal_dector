@@ -38,9 +38,13 @@ set hfuse=0xff
 mkdir firmware
 set dir=firmware
 
+set F_CPU=9600000
+
 set main=main
 set target=%dir%\avr_pi_metal_detector
-set ac=C:\WinAVR-20100110
+::set ac=C:\WinAVR-20100110
+:: 2020-09-07, download avr-gcc 3.6 from Microchip
+set ac=C:\avr8-gnu-toolchain-win32_x86
 
 path %ac%\bin;%ac%\utils\bin;%path%;
 
@@ -61,7 +65,7 @@ avr-gcc.exe -dumpversion
 ::avr-gcc.exe -xc -Os -mmcu=%mcu% -Wall -g0 -o %main%.out %main%.c -w
 
 :::: -Os optinize for Size, debug -g is ok
-avr-gcc.exe -xc -Os -mmcu=%mcu% -Wall -g -o %target%.out %main%.c -w
+avr-gcc.exe -xc -Os -DF_CPU=%F_CPU% -mmcu=%mcu% -Wall -g -o %target%.out %main%.c -w
 
 
 ::Compiling
@@ -69,7 +73,7 @@ avr-gcc.exe -xc -Os -mmcu=%mcu% -Wall -g -o %target%.out %main%.c -w
 
 
 :::: // output asm
-avr-gcc.exe -S -fverbose-asm -xc -Os -gdwarf-2 -mmcu=%mcu% -Wall -g0 -S -o %target%.s %main%.c
+avr-gcc.exe -S -fverbose-asm -xc -Os -DF_CPU=%F_CPU% -gdwarf-2 -mmcu=%mcu% -Wall -g0 -S -o %target%.s %main%.c
 
 ::avr-gcc.exe -O2 -Wl,-Map, %main%.map -o %main%.out %main%.c -mmcu=%mcu%
 

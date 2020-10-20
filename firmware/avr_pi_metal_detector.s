@@ -1,179 +1,175 @@
 	.file	"main.c"
-__SREG__ = 0x3f
-__SP_H__ = 0x3e
 __SP_L__ = 0x3d
-__CCP__  = 0x34
+__SREG__ = 0x3f
 __tmp_reg__ = 0
 __zero_reg__ = 1
- ;  GNU C (WinAVR 20100110) version 4.3.3 (avr)
- ; 	compiled by GNU C version 3.4.5 (mingw-vista special r3), GMP version 4.2.3, MPFR version 2.4.1.
+ ;  GNU C11 (AVR_8_bit_GNU_Toolchain_3.6.2_1778) version 5.4.0 (avr)
+ ; 	compiled by GNU C version 4.7.4, GMP version 5.0.2, MPFR version 3.0.0, MPC version 0.9
  ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
- ;  options passed:  -imultilib avr25 -iprefix
- ;  c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/ main.c -mmcu=attiny13
+ ;  options passed:  -imultilib avr25/tiny-stack
+ ;  -iprefix c:\avr8-gnu-toolchain-win32_x86\bin\../lib/gcc/avr/5.4.0/
+ ;  -D__AVR_ATtiny13__ -D__AVR_DEVICE_NAME__=attiny13 -D F_CPU=9600000
+ ;  main.c -mn-flash=1 -mno-skip-bug -mmcu=avr25 -msp8
  ;  -auxbase-strip firmware\avr_pi_metal_detector.s -gdwarf-2 -g0 -Os -Wall
  ;  -fverbose-asm
- ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
- ;  -fbranch-count-reg -fcaller-saves -fcommon -fcprop-registers
- ;  -fcrossjumping -fcse-follow-jumps -fdefer-pop -fearly-inlining
- ;  -feliminate-unused-debug-types -fexpensive-optimizations
- ;  -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
- ;  -fguess-branch-probability -fident -fif-conversion -fif-conversion2
- ;  -finline-functions -finline-functions-called-once
- ;  -finline-small-functions -fipa-pure-const -fipa-reference -fivopts
- ;  -fkeep-static-consts -fleading-underscore -fmath-errno
- ;  -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
- ;  -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
- ;  -fpeephole -fpeephole2 -freg-struct-return -fregmove
- ;  -freorder-functions -frerun-cse-after-loop -fsched-interblock
- ;  -fsched-spec -fsched-stalled-insns-dep -fsigned-zeros
- ;  -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
- ;  -fstrict-overflow -fthread-jumps -ftoplevel-reorder -ftrapping-math
- ;  -ftree-ccp -ftree-copy-prop -ftree-copyrename -ftree-dce
- ;  -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
- ;  -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
- ;  -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
- ;  -ftree-store-ccp -ftree-ter -ftree-vect-loop-version -ftree-vrp
- ;  -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
-
- ;  Compiler executable checksum: 61d68a374065d489330774d2533cbbdf
+ ;  options enabled:  -Wmisspelled-isr -faggressive-loop-optimizations
+ ;  -falign-functions -falign-jumps -falign-labels -falign-loops
+ ;  -fauto-inc-dec -fbranch-count-reg -fchkp-check-incomplete-type
+ ;  -fchkp-check-read -fchkp-check-write -fchkp-instrument-calls
+ ;  -fchkp-narrow-bounds -fchkp-optimize -fchkp-store-bounds
+ ;  -fchkp-use-static-bounds -fchkp-use-static-const-bounds
+ ;  -fchkp-use-wrappers -fcombine-stack-adjustments -fcommon -fcompare-elim
+ ;  -fcprop-registers -fcrossjumping -fcse-follow-jumps -fdefer-pop
+ ;  -fdevirtualize -fdevirtualize-speculatively -fdwarf2-cfi-asm
+ ;  -fearly-inlining -feliminate-unused-debug-types
+ ;  -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+ ;  -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+ ;  -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+ ;  -findirect-inlining -finline -finline-atomics -finline-functions
+ ;  -finline-functions-called-once -finline-small-functions -fipa-cp
+ ;  -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+ ;  -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+ ;  -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+ ;  -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+ ;  -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+ ;  -fmath-errno -fmerge-constants -fmerge-debug-strings
+ ;  -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+ ;  -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+ ;  -freg-struct-return -freorder-blocks -freorder-functions
+ ;  -frerun-cse-after-loop -fsched-critical-path-heuristic
+ ;  -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+ ;  -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+ ;  -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-fusion
+ ;  -fsemantic-interposition -fshow-column -fshrink-wrap -fsigned-zeros
+ ;  -fsplit-ivs-in-unroller -fsplit-wide-types -fssa-phiopt -fstdarg-opt
+ ;  -fstrict-aliasing -fstrict-overflow -fstrict-volatile-bitfields
+ ;  -fsync-libcalls -fthread-jumps -ftoplevel-reorder -ftrapping-math
+ ;  -ftree-bit-ccp -ftree-builtin-call-dce -ftree-ccp -ftree-ch
+ ;  -ftree-coalesce-vars -ftree-copy-prop -ftree-copyrename -ftree-dce
+ ;  -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+ ;  -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+ ;  -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop
+ ;  -ftree-pre -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+ ;  -ftree-slsr -ftree-sra -ftree-switch-conversion -ftree-tail-merge
+ ;  -ftree-ter -ftree-vrp -funit-at-a-time -fverbose-asm
+ ;  -fzero-initialized-in-bss -msp8
 
 	.text
 	.type	measure_decay, @function
 measure_decay:
 /* prologue: function */
 /* frame size = 0 */
-	sbi 56-32,2	 ; ,,
-	ldi r24,lo8(10)	 ;  __count,
-/* #APP */
- ;  83 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: dec r24	 ;  __count
+/* stack size = 0 */
+.L__stack_usage = 0
+	sbi 0x18,2	 ; ,
+	ldi r20,lo8(102)	 ; ,
+1:	dec r20	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-	cbi 56-32,2	 ; ,,
-	ldi r18,lo8(0)	 ;  i,
-	ldi r19,hi8(0)	 ;  i,
-	ldi r20,lo8(0)	 ;  decay,
-	ldi r21,hi8(0)	 ;  decay,
+	rjmp .
+	cbi 0x18,2	 ; ,
+	ldi r24,0	 ;  decay
+	ldi r25,0	 ;  decay
+	ldi r18,0	 ;  decay
+	ldi r19,0	 ;  decay
 .L3:
-	sbic 40-32,5	 ; ,,
-	movw r20,r18	 ;  decay, i
+	sbic 0x8,5	 ; ,
+	movw r24,r18	 ; ,
 .L2:
-	subi r18,lo8(-(1))	 ;  i,
-	sbci r19,hi8(-(1))	 ;  i,
-	ldi r24,hi8(2048)	 ; ,
-	cpi r18,lo8(2048)	 ;  i,
-	cpc r19,r24	 ;  i,
+	subi r18,-1	 ;  decay,
+	sbci r19,-1	 ;  decay,
+	cp r18,__zero_reg__	 ;  decay
+	ldi r20,8	 ; ,
+	cpc r19,r20	 ;  decay,
 	brne .L3	 ; ,
-	movw r24,r20	 ; ,
 /* epilogue start */
 	ret
 	.size	measure_decay, .-measure_decay
+	.section	.text.startup,"ax",@progbits
 .global	main
 	.type	main, @function
 main:
-	push r17	 ; 
-	push r28	 ; 
-	push r29	 ; 
 /* prologue: function */
 /* frame size = 0 */
-	ldi r24,lo8(28)	 ;  tmp67,
-	out 55-32,r24	 ; ,, tmp67
-	out 40-32,__zero_reg__	 ; ,,
-	ldi r28,lo8(0)	 ;  decay.57,
-	ldi r29,hi8(0)	 ;  decay.57,
-	ldi r17,lo8(0)	 ;  i,
-.L8:
+/* stack size = 0 */
+.L__stack_usage = 0
+	ldi r24,lo8(28)	 ;  tmp61,
+	out 0x17,r24	 ;  MEM[(volatile uint8_t *)55B], tmp61
+	out 0x8,__zero_reg__	 ;  MEM[(volatile uint8_t *)40B],
+	ldi r17,0	 ;  i
+	ldi r28,0	 ;  decay
+	ldi r29,0	 ;  decay
+.L11:
 	rcall measure_decay	 ; 
-	cp r28,r24	 ;  decay.57, decay
-	cpc r29,r25	 ;  decay.57, decay
-	brsh .L7	 ; ,
-	movw r28,r24	 ;  decay.57, decay
-.L7:
+	cp r28,r24	 ;  decay, decay
+	cpc r29,r25	 ;  decay, decay
+	brsh .L10	 ; ,
+	movw r28,r24	 ;  decay, decay
+.L10:
 	subi r17,lo8(-(1))	 ;  i,
 	cpi r17,lo8(-128)	 ;  i,
-	brne .L8	 ; ,
-	ldi r20,lo8(0)	 ;  i.56,
-	ldi r22,lo8(75)	 ;  tmp88,
-	ldi r23,hi8(75)	 ;  tmp88,
-	ldi r30,lo8(16000)	 ;  tmp90,
-	ldi r31,hi8(16000)	 ;  tmp90,
-	rjmp .L9	 ; 
-.L10:
-	in r24,56-32	 ;  D.1374,,
-	ori r24,lo8(24)	 ;  D.1374,
-	out 56-32,r24	 ; ,, D.1374
-	movw r24,r22	 ;  __count, tmp88
-/* #APP */
- ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: sbiw r24,1	 ;  __count
+	brne .L11	 ; ,
+	ldi r18,lo8(3)	 ;  D.1864,
+.L14:
+	ldi r24,lo8(64)	 ;  D.1865,
+	ldi r25,0	 ;  D.1865
+.L13:
+	in r19,0x18	 ;  D.1863, MEM[(volatile uint8_t *)56B]
+	ori r19,lo8(24)	 ;  D.1863,
+	out 0x18,r19	 ;  MEM[(volatile uint8_t *)56B], D.1863
+	ldi r30,lo8(719)	 ; ,
+	ldi r31,hi8(719)	 ; ,
+1:	sbiw r30,1	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-	in r24,56-32	 ;  D.1376,,
-	andi r24,lo8(-25)	 ;  D.1376,
-	out 56-32,r24	 ; ,, D.1376
-	movw r24,r22	 ;  __count, tmp88
-/* #APP */
- ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: sbiw r24,1	 ;  __count
+	rjmp .
+	nop
+	in r19,0x18	 ;  D.1863, MEM[(volatile uint8_t *)56B]
+	andi r19,lo8(-25)	 ;  D.1863,
+	out 0x18,r19	 ;  MEM[(volatile uint8_t *)56B], D.1863
+	ldi r30,lo8(719)	 ; ,
+	ldi r31,hi8(719)	 ; ,
+1:	sbiw r30,1	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-	subi r18,lo8(-(1))	 ;  tmp,
-	sbci r19,hi8(-(1))	 ;  tmp,
-	cpi r18,64	 ;  tmp,
-	cpc r19,__zero_reg__	 ;  tmp
-	brne .L10	 ; ,
-	movw r24,r30	 ;  __count, tmp90
-/* #APP */
- ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: sbiw r24,1	 ;  __count
+	rjmp .
+	nop
+	sbiw r24,1	 ;  D.1865,
+	brne .L13	 ; ,
+	ldi r31,lo8(122879)	 ; ,
+	ldi r19,hi8(122879)	 ; ,
+	ldi r24,hlo8(122879)	 ; ,
+1:	subi r31,1	 ; 
+	sbci r19,0	 ; 
+	sbci r24,0	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-	subi r20,lo8(-(1))	 ;  i.56,
-	cpi r20,lo8(3)	 ;  i.56,
-	breq .L11	 ; ,
-.L9:
-	ldi r18,lo8(0)	 ;  tmp,
-	ldi r19,hi8(0)	 ;  tmp,
-	rjmp .L10	 ; 
-.L11:
+	rjmp .
+	nop
+	subi r18,lo8(-(-1))	 ;  D.1864,
+	brne .L14	 ; ,
 	sbiw r28,2	 ;  decay_max,
-	ldi r24,lo8(5000)	 ;  __ticks,
-	ldi r25,hi8(5000)	 ;  __ticks,
-	ldi r18,lo8(25)	 ;  tmp85,
-	ldi r19,hi8(25)	 ;  tmp85,
-.L12:
-	movw r30,r18	 ;  __count, tmp85
-/* #APP */
- ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: sbiw r30,1	 ;  __count
+	ldi r25,lo8(959999)	 ; ,
+	ldi r30,hi8(959999)	 ; ,
+	ldi r31,hlo8(959999)	 ; ,
+1:	subi r25,1	 ; 
+	sbci r30,0	 ; 
+	sbci r31,0	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-	sbiw r24,1	 ;  __ticks,
-	brne .L12	 ; ,
-	ldi r17,lo8(33)	 ;  tmp84,
-.L19:
+	rjmp .
+	nop
+.L17:
 	rcall measure_decay	 ; 
 	cp r24,r28	 ; , decay_max
 	cpc r25,r29	 ; , decay_max
-	brsh .L13	 ; ,
-	in r24,56-32	 ;  D.1291,,
-	ori r24,lo8(24)	 ;  D.1291,
-	out 56-32,r24	 ; ,, D.1291
-	mov r24,r17	 ;  __count, tmp84
-/* #APP */
- ;  83 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
-	1: dec r24	 ;  __count
+	brsh .L16	 ; ,
+	in r24,0x18	 ;  D.1863, MEM[(volatile uint8_t *)56B]
+	ori r24,lo8(24)	 ;  D.1863,
+	out 0x18,r24	 ;  MEM[(volatile uint8_t *)56B], D.1863
+	ldi r24,lo8(240)	 ; ,
+	ldi r25,hi8(240)	 ; ,
+1:	sbiw r24,1	 ; 
 	brne 1b
- ;  0 "" 2
-/* #NOAPP */
-.L13:
-	in r24,56-32	 ;  D.1293,,
-	andi r24,lo8(-25)	 ;  D.1293,
-	out 56-32,r24	 ; ,, D.1293
-	rjmp .L19	 ; 
+.L16:
+	in r24,0x18	 ;  D.1863, MEM[(volatile uint8_t *)56B]
+	andi r24,lo8(-25)	 ;  D.1863,
+	out 0x18,r24	 ;  MEM[(volatile uint8_t *)56B], D.1863
+	rjmp .L17	 ; 
 	.size	main, .-main
+	.ident	"GCC: (AVR_8_bit_GNU_Toolchain_3.6.2_1778) 5.4.0"

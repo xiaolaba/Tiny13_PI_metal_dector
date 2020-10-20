@@ -2,10 +2,31 @@
 
 clone https://blog.podkalicki.com/attiny13-pi-metal-detector/ and modified
 
-uses windows avr-gcc to compile, build.bat is build and used.
+uses windows avr-gcc to compile, build.bat is build and used, try Make as well  
 
 License : follow the original author's, BSD 3-Clause "New" or "Revised" License  
 
-Git gui push, no process *.hex, why ? change firmware biuld with "_hex"
+### Git gui push, no process *.hex, why ? change firmware biuld with "_hex"
+firmware produced *_hex but not *.hex  
 
-add reading material of Pulse-Induction for metal detector  
+
+### add reading material of Pulse-Induction for metal detector   
+[ATtiny13 - PI metal detector _ ?ukasz Podkalicki.pdf](Pulse-Induction\ATtiny13 - PI metal detector _ ?ukasz Podkalicki.pdf)   
+[How Metal Detectors Work.pdf](Pulse-Induction\How Metal Detectors Work.pdf)       
+[Metal detector.pdf](Pulse-Induction\Metal detector.pdf)             
+[Understanding The PI Detector.pdf](Pulse-Induction\Understanding The PI Detector.pdf)     
+[Understanding The PI Detector (part 2).pdf](Pulse-Induction\Understanding The PI Detector (part 2).pdf)    
+
+### two version of avr-gcc used setup the path first if using Windows machine,
+::set ac=C:\WinAVR-20100110
+:: 2020-09-07, download avr-gcc 3.6 from Microchip
+set ac=C:\avr8-gnu-toolchain-win32_x86
+
+### two types of firmware build process
+
+1. dosmake.bat, uses make and Makefile, Makefile modified to output to firmware & path
+    
+2. build.bat, no uses Makefile, must include flag -DF_CPU=%F_CPU%, otherwise WinAVR-20100110 has no warning, but Microchip AVR8 toolchain has warning. listing and asm also produced  
+
+result should be the same
+  

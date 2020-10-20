@@ -12,14 +12,14 @@ OBJCOPY=avr-objcopy
 SIZE=avr-size
 AVRDUDE=avrdude
 CFLAGS=-std=c99 -Wall -g -Os -mmcu=${MCU} -DF_CPU=${F_CPU} -I.
-TARGET=main
+TARGET=firmware\avr_pi_metal_detector_${MCU}
 
 SRCS = main.c
 
 all:
 	${CC} ${CFLAGS} -o ${TARGET}.o ${SRCS}
 	${LD} -o ${TARGET}.elf ${TARGET}.o
-	${OBJCOPY} -j .text -j .data -O ihex ${TARGET}.o ${TARGET}.hex
+	${OBJCOPY} -j .text -j .data -O ihex ${TARGET}.o ${TARGET}_hex
 	${SIZE} -C --mcu=${MCU} ${TARGET}.elf
 
 flash:
