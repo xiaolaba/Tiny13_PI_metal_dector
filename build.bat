@@ -73,8 +73,12 @@ avr-gcc.exe -S -fverbose-asm -xc -Os -gdwarf-2 -mmcu=%mcu% -Wall -g0 -S -o %targ
 
 ::avr-gcc.exe -O2 -Wl,-Map, %main%.map -o %main%.out %main%.c -mmcu=%mcu%
 
+:: git gui push did not process *.hex, why ? change firmware buid with *_hex
+
 cmd /c avr-objdump.exe -h -S %target%.out >%target%.lst
-cmd /c avr-objcopy.exe -O ihex %target%.out %target%_%mcu%.hex
+::cmd /c avr-objcopy.exe -O ihex %target%.out %target%_%mcu%.hex
+cmd /c avr-objcopy.exe -O ihex %target%.out %target%_%mcu%_hex
+
 avr-size.exe %target%.out
 del %target%.out
 
