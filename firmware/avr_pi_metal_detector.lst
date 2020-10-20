@@ -1,5 +1,5 @@
 
-avr_pi_metal_detector.out:     file format elf32-avr
+firmware\avr_pi_metal_detector.out:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
