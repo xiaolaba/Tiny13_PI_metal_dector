@@ -10,7 +10,7 @@ __zero_reg__ = 1
  ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
  ;  options passed:  -imultilib avr25 -iprefix
  ;  c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/ main.c -mmcu=attiny13
- ;  -auxbase-strip avr_pi_metal_detector.s -gdwarf-2 -g0 -Os -Wall
+ ;  -auxbase-strip firmware\avr_pi_metal_detector.s -gdwarf-2 -g0 -Os -Wall
  ;  -fverbose-asm
  ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
  ;  -fbranch-count-reg -fcaller-saves -fcommon -fcprop-registers

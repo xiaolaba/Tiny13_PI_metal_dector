@@ -35,8 +35,11 @@ set hfuse=0xff
 :::: // PRR register, Power Reduction Register
 ::set mcu=attiny13a   
 
+mkdir firmware
+set dir=firmware
+
 set main=main
-set target=avr_pi_metal_detector
+set target=%dir%\avr_pi_metal_detector
 set ac=C:\WinAVR-20100110
 
 path %ac%\bin;%ac%\utils\bin;%path%;
