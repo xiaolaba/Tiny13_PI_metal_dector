@@ -5,4 +5,8 @@ learning to see how disassembly works of avr-gcc,
 this is no unrespecting & aims to the original author or the work,  
 
 for more advance or tools, IDA pro (commercial) https://hex-rays.com/ida-pro/  
-or free tool https://ghidra-sre.org/ 
+
+
+or free tool https://ghidra-sre.org/  
+![ghidra_display.JPG](ghidra_display.JPG)  
+![ghidra_display_lcd_string.JPG](ghidra_display_lcd_string.JPG)  
