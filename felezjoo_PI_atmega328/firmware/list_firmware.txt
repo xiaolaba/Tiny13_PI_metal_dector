@@ -1,0 +1,13 @@
+
+
+FelezJoo_PI_v1_50.hex
+FelezJoo_PI_v2_40.hex
+FelezJoo_PI_v3_00.hex
+FelezJoo_PI_v3_05.hex
+FelezJoo_PI_v3_20.hex
+FelezJoo_PI_v3_23.hex
+FelezJoo_PI_v3_30.hex
+FelezJoo_PI_v3_35.hex
+FelezJoo_PI_v3_35_full_version_no_counter_not_working.hex
+FelezJoo_PI_v3_35_not_wowrking.hex
+
