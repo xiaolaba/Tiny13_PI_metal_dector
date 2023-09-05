@@ -2,9 +2,10 @@
 ![my_testing.jpg](my_testing.jpg)  
 ![my_schematic.jpg](my_schematic.jpg)  
 [my_schematic.pdf](my_schematic.pdf)  
-testing, LCD, powertip PC1602V-P6 MCU connection,  Arduino Nano, 
-LCD PIN V0 = GND  
-LCD PIN LED+ = 5V  
+testing, LCD, powertip PC1602V-P6 MCU connection,  Arduino Nano,   
+```
+LCD PIN V0 = GND   
+LCD PIN LED+ = 5V   
 Arduino PIN TXD = LCD PIN E  
 Arduino PIN RXD = LCD PIN RS  
 Arduino PIN RST, no connection  
@@ -19,7 +20,7 @@ Arduino PIN A2 = DOWN
 
 Arduino PIN A1 = BATTERY_VOLTAGE_SENSE  
 Arduino PIN A0 = METAL_DETECOR_SIGNAL  
-
+```
 
 ### felezjoo PI (pulse induction) metal detector 3.35
 伊朗 出品
