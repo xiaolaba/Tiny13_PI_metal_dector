@@ -1,4 +1,6 @@
-felezjoo PI (pulse induction) metal detector 3.35
+![my_testing.jpg](my_testing.jpg)  
+
+### felezjoo PI (pulse induction) metal detector 3.35
 伊朗 出品
 
 
