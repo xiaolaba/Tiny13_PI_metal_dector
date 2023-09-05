@@ -1,5 +1,7 @@
+### felezjoo PI (pulse induction) metal detector 3.35 testing, 
 ![my_testing.jpg](my_testing.jpg)  
-[my_testing.pdf](my_testing.pdf)  
+![my_schematic.jpg](my_schematic.jpg)  
+[my_schematic.pdf](my_schematic.pdf)  
 testing, LCD, powertip PC1602V-P6 MCU connection,  
 LCD PIN V0 = GND  
 LCD PIN LED+ = 5V  
