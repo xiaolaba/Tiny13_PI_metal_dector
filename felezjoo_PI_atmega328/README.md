@@ -2,17 +2,21 @@
 ![my_testing.jpg](my_testing.jpg)  
 ![my_schematic.jpg](my_schematic.jpg)  
 [my_schematic.pdf](my_schematic.pdf)  
-testing, LCD, powertip PC1602V-P6 MCU connection,  
+testing, LCD, powertip PC1602V-P6 MCU connection,  Arduino Nano, 
 LCD PIN V0 = GND  
 LCD PIN LED+ = 5V  
-Arduino PIN RXD = LCD PIN RS  
 Arduino PIN TXD = LCD PIN E  
+Arduino PIN RXD = LCD PIN RS  
+Arduino PIN RST, no connection  
+Arduino PIN GND = LCD PIN VSS
 Arduino PIN D2/D3/D4/D8 = LCD PIN D4/D5/D6/D7  
+
 Arduino PIN D13 = OK  
 Arduino PIN A5 = LEFT  
 Arduino PIN A4 = UP  
 Arduino PIN A3 = RIGHT  
 Arduino PIN A2 = DOWN  
+
 Arduino PIN A1 = BATTERY_VOLTAGE_SENSE  
 Arduino PIN A0 = METAL_DETECOR_SIGNAL  
 
